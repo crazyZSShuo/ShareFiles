@@ -1,0 +1,33 @@
+name = "sharefilescf-backend"
+main = "src/index.ts"
+compatibility_date = "2023-12-18"
+
+[env.production]
+name = "sharefilescf-backend"
+
+[env.development]
+name = "sharefilescf-backend-dev"
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "sharefiles-db"
+database_id = "47b09188-5fee-40a0-8fd2-cce41569a2b2"
+migrations_dir = "../database/migrations"
+
+# R2 Storage
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "sharefiles-storage"
+
+# Environment variables
+[vars]
+CORS_ORIGIN = "*"
+MAX_FILE_SIZE = "10485760"  # 10MB in bytes
+DEFAULT_EXPIRY_HOURS = "24"
+MAX_EXPIRY_HOURS = "168"    # 7 days
+
+# KV for rate limiting (optional)
+[[kv_namespaces]]
+binding = "RATE_LIMITER"
+id = "b250a67f156c4dfbb0b3834e06edbe0c"

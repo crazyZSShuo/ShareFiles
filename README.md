@@ -101,10 +101,6 @@ npm run test:backend
 npm run type-check
 ```
 
-## 🌟 Demo
-
-Try the live demo: [sharefilescf.pages.dev](https://sharefilescf.pages.dev)
-
 ### Example Usage
 
 **File Sharing:**
